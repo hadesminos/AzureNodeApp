@@ -10,7 +10,9 @@ router.get('/', function(req, res, next) {
   //const { GA, ClientDIP } = req.query;
 
   //var visitor = ua( req.query.GA, cid = req.query.cid);
-  var visitor = ua( 'UA-165884413-8', cid = req.ip.split(':').shift());
+  var visitor = ua( tid = 'UA-165884413-8', cid = req.ip.split(':').shift(), {
+    uid: req.ip.split(':').shift(),
+  });
   //visitor.pageview("/" + req.query.Page).send();
   visitor.pageview("/").send();
   //visitor.event("Event Category", "Event Action").send();
