@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ua = require('universal-analytics');
-var uuid = require('uuid');
+//var uuid = require('uuid');
 
 
 /* GET home page. */
