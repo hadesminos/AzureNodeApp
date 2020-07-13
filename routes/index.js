@@ -8,10 +8,13 @@ router.get('/', function(req, res, next) {
   //const  GA = req.query.GA;
   //const cid = req.query.cid;
   //const { GA, ClientDIP } = req.query;
+  const cid = req.ip.split(':').shift();
 
   //var visitor = ua( req.query.GA, cid = req.query.cid);
-  var visitor = ua( tid = 'UA-165884413-8', cid = req.ip.split(':').shift(), {
-    uid: req.ip.split(':').shift(),
+  var visitor = ua( tid = 'UA-165884413-8',{
+    cid: cid,
+    uid: cid,
+    headers: {},
   });
   //visitor.pageview("/" + req.query.Page).send();
   visitor.pageview("/").send();
@@ -20,7 +23,7 @@ router.get('/', function(req, res, next) {
   //const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   //res.render('index', { title: 'Express ' + ip});
   //res.send('ga ' + req.query.GA + ' client ' + req.query.cid);
-  res.send(' client ' + req.ip.split(':').shift());
+  res.send(' client id ' + cid);
   //res.send('Success');
 });
 
