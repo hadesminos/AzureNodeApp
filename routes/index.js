@@ -5,7 +5,7 @@ const ua = require('universal-analytics');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  const { GA, cid } = reques.query;
+  const { GA, cid } = req.query;
 
   var visitor = ua( GA, cid = cid);
   visitor.pageview("/test").send();
