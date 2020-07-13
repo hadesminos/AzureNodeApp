@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
   var visitor = ua( tid = 'UA-165884413-8',{
     cid: cid,
     uid: cid,
-    headers: {},
+    strictCidFormat: false,
   });
   //visitor.pageview("/" + req.query.Page).send();
   visitor.pageview("/").send();
