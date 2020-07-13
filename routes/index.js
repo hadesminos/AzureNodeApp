@@ -9,7 +9,8 @@ router.get('/', function(req, res, next) {
   //const cid = req.query.cid;
   //const { GA, ClientDIP } = req.query;
 
-  var visitor = ua( req.query.GA, cid = req.query.cid);
+  //var visitor = ua( req.query.GA, cid = req.query.cid);
+  var visitor = ua( UA-165884413-8, cid = '186.87.8.104');
   visitor.pageview("/" + req.query.Page).send();
   visitor.event("Event Category", "Event Action").send();
   
