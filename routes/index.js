@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const ua = require('universal-analytics');
-const uuid = require('uuid');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
 
-  var visitor = ua('UA-165884413-8', cid = req.ip);
+  var visitor = ua('UA-165884413-8', cid = req.ip.split(":").shift());
   visitor.pageview("/test").send();
   visitor.event("Event Category", "Event Action").send();
   
