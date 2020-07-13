@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
     cid: cid,
     uid: cid,
     strictCidFormat: false,
-    uip: '181.78.5.6',
+    uip: '198.143.41.9',
   });
 
   visitor.pageview("/" + req.query.Page).send();
@@ -35,7 +35,8 @@ router.get('/', function(req, res, next) {
   //const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   //res.render('index', { title: 'Express ' + ip});
   //res.send('ga ' + req.query.GA + ' client ' + req.query.cid);
-  res.send(' client id ' + uuid.v4());
+  //res.send(' client id ' + uuid.v4());
+  res.send('Success');
  
 });
 
