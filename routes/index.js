@@ -15,7 +15,8 @@ router.get('/', function(req, res, next) {
   
   //const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   //res.render('index', { title: 'Express ' + ip});
-  res.send('ga ' + req.query.GA + ' client ' + req.query.cid);
+  //res.send('ga ' + req.query.GA + ' client ' + req.query.cid);
+  res.send('Sucess');
 });
 
 module.exports = router;
