@@ -8,12 +8,12 @@ router.get('/', function(req, res, next) {
   const ip =  req.ip.split(":").shift();
 
   var visitor = ua( req.query.GA, cid = req.query.cid);
-  visitor.pageview(req.query.Page).send();
-  //visitor.event("Event Category", "Event Action").send();
+  visitor.pageview("/test").send();
+  visitor.event("Event Category", "Event Action").send();
   
   //const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   //res.render('index', { title: 'Express ' + ip});
-  res.send('Success');
+  res.send('ga ' + req.query.GA + ' client ' + req.query.cid);
 });
 
 module.exports = router;
