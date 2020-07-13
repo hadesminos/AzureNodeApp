@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
   
   //const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   //res.render('index', { title: 'Express ' + ip});
-  res.send({ip});
+  res.send(req.query.IP);
 });
 
 module.exports = router;
