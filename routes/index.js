@@ -7,7 +7,7 @@ const uuid = require('uuid');
 router.get('/', function(req, res, next) {
 
 
-  var visitor = ua('UA-165884413-8', req.connection.remoteAddress);
+  var visitor = ua('UA-165884413-8', req.ip);
   visitor.pageview("/test").send();
   visitor.event("Event Category", "Event Action").send();
   
