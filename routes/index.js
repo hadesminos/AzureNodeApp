@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
   visitor.pageview("/test").send();
   visitor.event("Event Category", "Event Action").send();
   
-  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  //const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   res.render('index', { title: 'Express ' + req.ip});
 });
 
