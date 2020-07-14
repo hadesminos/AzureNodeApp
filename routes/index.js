@@ -17,7 +17,8 @@ router.get('/', function(req, res, next) {
     cid: cid,
     uid: cid,
     strictCidFormat: false,
-    uip: '40.122.65.162' //uip
+    uip: '40.122.65.162', //uip,
+    aip=0
   });
 
   //visitor.set('40.122.65.162');
