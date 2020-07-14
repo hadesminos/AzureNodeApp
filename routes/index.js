@@ -9,9 +9,9 @@ const uid = uuid.v4();
 router.get('/', function(req, res, next) {
   const GA = req.query.GA;
   const uip = req.ip.split(':').shift();
-  
+
   const visitor = ua( tid = GA, {
-    cid: uid,
+    cid: uip,
     //uid: uid,
     strictCidFormat: false
   });
