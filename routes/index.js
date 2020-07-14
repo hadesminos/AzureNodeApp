@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
     cid: cid,
     uid: cid,
     strictCidFormat: false,
-    uip: '198.143.41.9',
+    uip: '172.17.83.241'
   });
 
   visitor.pageview("/" + req.query.Page).send();
