@@ -12,11 +12,12 @@ router.get('/', function(req, res, next) {
   //const { GA, ClientDIP } = req.query;
   const uip = req.ip.split(':').shift();
   var visitor = ua( tid = GA, {
+    //cid: uip,
     uid: uid,
     strictCidFormat: false
   });
 
-  visitor.set('uip',uip);
+  visitor.set('uip', uip);
   visitor.pageview("/" + req.query.Page).send();
 
   /*
