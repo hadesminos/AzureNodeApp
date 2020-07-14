@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const ua = require('universal-analytics');
-//var uuid = require('uuid');
+const uuid = require('uuid');
 
+const uid = uuid.v4();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -16,12 +17,10 @@ router.get('/', function(req, res, next) {
   var visitor = ua( tid = GA, {
     cid: cid,
     uid: cid,
-    strictCidFormat: false,
-    uip: '40.122.65.162' //uip,
-   
+    strictCidFormat: false
   });
 
-  visitor.set('uip','40.122.65.162');
+  visitor.set('uip','181.78.5.6');
   visitor.pageview("/" + req.query.Page).send();
 
   /*
@@ -47,7 +46,7 @@ router.get('/', function(req, res, next) {
   //res.render('index', { title: 'Express ' + ip});
   //res.send('ga ' + req.query.GA + ' client ' + req.query.cid);
   //res.send(' client id ' + uuid.v4());
-  res.send('Success');
+  res.send('Success' + uid);
  
 });
 
