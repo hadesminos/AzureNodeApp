@@ -12,8 +12,8 @@ router.get('/', function(req, res, next) {
   //const { GA, ClientDIP } = req.query;
   const uip = req.ip.split(':').shift();
   var visitor = ua( tid = GA, {
-    cid: uid,
-    uid: uid,
+    cid: uip,
+    uid: uip,
     strictCidFormat: false
   });
 
