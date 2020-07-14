@@ -13,11 +13,11 @@ router.get('/', function(req, res, next) {
   const uip = req.ip.split(':').shift();
   const userId = req && req.user && req.user._id ;
 
-  var visitor = ua( tid = GA, {
+  var visitor = ua.middleware( tid = GA, {
     cid: cid,
     uid: cid,
     strictCidFormat: false,
-    uip: '172.17.83.241'
+    uip: '172.17.83.241' //uip
   });
 
   visitor.pageview("/" + req.query.Page).send();
