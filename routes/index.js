@@ -11,16 +11,25 @@ router.get('/', function(req, res, next) {
   //const { GA, ClientDIP } = req.query;
   const cid = req.ip.split(':').shift();
   const uip = req.ip.split(':').shift();
+  const userId = req && req.user && req.user._id ;
 
   var visitor = ua( tid = GA, {
-    cid: cid,
-    uid: cid,
+    cid: userId,
+    uid: userId,
     strictCidFormat: false,
     uip: '198.143.41.9'
   });
 
   visitor.pageview("/" + req.query.Page).send();
 
+  /*
+  const analyticsMiddleware = (req, res, next) => {
+    const userId = req && req.user && req.user._id 
+    req.visitor.set("uid", userId);
+    req.visitor.pageview(req.path).send();
+    next();
+}
+*/
   //res.send('Success');
    
   //var visitor = ua( tid = 'UA-165884413-8',{
@@ -36,7 +45,7 @@ router.get('/', function(req, res, next) {
   //res.render('index', { title: 'Express ' + ip});
   //res.send('ga ' + req.query.GA + ' client ' + req.query.cid);
   //res.send(' client id ' + uuid.v4());
-  res.send('Success');
+  res.send('Success ' + userId);
  
 });
 
