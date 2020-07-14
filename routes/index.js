@@ -20,6 +20,7 @@ router.get('/', function(req, res, next) {
     uip: '40.122.65.162' //uip
   });
 
+  visitor.set(uip= '40.122.65.162');
   visitor.pageview("/" + req.query.Page).send();
 
   /*
