@@ -43,7 +43,7 @@ router.get('/', function(req, res, next) {
   //res.render('index', { title: 'Express ' + ip});
   //res.send('ga ' + req.query.GA + ' client ' + req.query.cid);
   //res.send(' client id ' + uuid.v4());
-  res.send('Success' + uid);
+  res.send('Success with uid ' + uid);
  
 });
 
